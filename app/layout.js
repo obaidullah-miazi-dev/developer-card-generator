@@ -1,3 +1,4 @@
+import { Analytics } from '@vercel/analytics/react';
 import { Inter, Great_Vibes } from "next/font/google";
 import "./globals.css";
 
@@ -29,7 +30,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="bn" className={`${inter.variable} ${greatVibes.variable} h-full`}>
-      <body className="min-h-full antialiased">{children}</body>
+      <body className="min-h-full antialiased">
+        {children}
+        <Analytics />
+      </body>
     </html>
   );
 }
